@@ -1,0 +1,39 @@
+{
+  "latex-workshop.latex.outDir": "%DIR%/build",
+  "latex-workshop.latex.auxDir": "%OUTDIR%",
+
+  "latex-workshop.latex.tools": [
+    {
+      "name": "xelatex",
+      "command": "xelatex",
+      "cwd": "%DIR%",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-output-directory=%OUTDIR%",
+        "%DOCFILE%"
+      ]
+    },
+    {
+      "name": "biber",
+      "command": "biber",
+      "cwd": "%DIR%",
+      "args": ["%OUTDIR%/%DOCFILE%"]
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "XeLaTeX",
+      "tools": ["xelatex"]
+    },
+    {
+      "name": "Biber",
+      "tools": ["biber"]
+    },
+    {
+      "name": "xelatex -> biber -> xelatex*2",
+      "tools": ["xelatex", "biber", "xelatex", "xelatex"]
+    }
+  ]
+}
