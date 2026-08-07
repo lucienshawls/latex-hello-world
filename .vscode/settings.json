@@ -35,5 +35,13 @@
       "name": "xelatex -> biber -> xelatex*2",
       "tools": ["xelatex", "biber", "xelatex", "xelatex"]
     }
+  ],
+  "latex-workshop.formatting.latex": "latexindent",
+  "latex-workshop.formatting.latexindent.args": [
+    "-c",
+    "%TMPDIR%/",
+    "%TMPFILE%",
+    "-l=%WORKSPACE_FOLDER%/.latexindent.yaml",
+    "-y=defaultIndent: '%INDENT%'"
   ]
 }

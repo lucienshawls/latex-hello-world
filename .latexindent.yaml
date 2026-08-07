@@ -1,0 +1,12 @@
+indentRules:
+  chapter:
+    body: ""
+    mandatoryArguments: "  "
+
+  section:
+    body: ""
+    mandatoryArguments: "  "
+
+  subsection:
+    body: ""
+    mandatoryArguments: "  "

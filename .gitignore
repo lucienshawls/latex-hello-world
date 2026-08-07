@@ -1,1 +1,6 @@
+# Compiled files
 build/
+
+# Temporary files for latexindent
+__latexindent_temp_*
+indent.log
