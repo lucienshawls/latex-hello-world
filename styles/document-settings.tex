@@ -1,0 +1,45 @@
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage[hidelinks]{hyperref}
+\usepackage[backend=biber,style=gb7714-2015]{biblatex}
+
+\addbibresource{bibliography/references.bib}
+\graphicspath{{figures/chapter-01/}}
+
+\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\setmainfont{TeX Gyre Termes}}
+\IfFontExistsTF{SimSun}{
+  \setCJKmainfont{SimSun}[AutoFakeBold=2]
+  \newCJKfontfamily\songti{SimSun}[AutoFakeBold=2]
+}{
+  \IfFontExistsTF{Songti SC}{
+    \setCJKmainfont{Songti SC}[AutoFakeBold=2]
+    \newCJKfontfamily\songti{Songti SC}[AutoFakeBold=2]
+  }{
+    \setCJKmainfont{STSong}[AutoFakeBold=2]
+    \newCJKfontfamily\songti{STSong}[AutoFakeBold=2]
+  }
+}
+
+\geometry{a4paper,includeheadfoot,top=15mm,bottom=15mm,inner=25mm,outer=20mm,headheight=14.5pt}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\ctexset{
+  chapter = {
+    name = {第,章},
+    number = \arabic{chapter},
+    format = \centering\bfseries\songti\rmfamily\zihao{3}
+  },
+  section = {
+    format = \bfseries\songti\rmfamily\zihao{4}
+  },
+  subsection = {
+    format = \bfseries\songti\rmfamily\zihao{-4}
+  }
+}
